@@ -8,7 +8,6 @@ let Dropzone = null
 export class DropzoneComponent extends React.Component {
   constructor (props) {
     super(props)
-
     this.state = { files: [] }
   }
 
@@ -50,7 +49,7 @@ export class DropzoneComponent extends React.Component {
 
     var dropzoneNode = this.props.config.dropzoneSelector || ReactDOM.findDOMNode(this)
     this.dropzone = new Dropzone(dropzoneNode, options)
-    this.setupEvents()
+    this.setupEvents(this.props)
   }
 
   /**
